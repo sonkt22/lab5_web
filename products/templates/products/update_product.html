@@ -1,0 +1,16 @@
+{% extends 'products/base.html' %}
+{% block content %}
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset>
+        <h1 class="boder-botto mb-4">Edit product</h1>
+        {{ form.as_p}}
+        <img src="{{ object.picture.url }}" alt="Flower avatar" width="300" height="300">
+    </fieldset>
+    <div class="form-group">
+        <p></p>
+        <button class="btn btn-outline-info" type="submit">Save</button>
+    </div>
+</form>    
+{% endblock %}

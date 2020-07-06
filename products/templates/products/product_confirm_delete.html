@@ -1,0 +1,17 @@
+{% extends 'products/base.html' %}
+{% block content %}
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset>
+            <h1 class="boder-botto mb-4">Delete product</h1>
+            <h3> Are you sure you want to inactive "{{ object.name }}"?</h3>
+            <p></p>
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-danger" type="submit">&nbsp OK &nbsp </button>
+            <a class="btn btn-outline-secondary" href="{% url 'products_list' %}">Cancel</a>
+        </div>
+    </form>    
+</div>
+{% endblock %}
